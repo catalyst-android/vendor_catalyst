@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     Launcher3QuickStep \
     ParallelSpace \
     messaging \
+    Seedvault \
     SimpleGallery \
     Stk \
     stats \
