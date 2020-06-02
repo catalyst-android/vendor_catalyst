@@ -27,7 +27,8 @@ PRODUCT_PACKAGES += \
     Stk \
     stats \
     GameSpace \
-    ThemePicker
+    ThemePicker \
+    TouchGestures
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
