@@ -114,8 +114,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
-    LineageSetupWizard \
-    Updater
+    LineageSetupWizard
 
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
@@ -210,11 +209,13 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 PRODUCT_VERSION_MAJOR = 0
 PRODUCT_VERSION_MINOR = 1
-CATALYST_BUILD := ALPHA
+CATALYST_BUILD := UNOFFICIAL-ALPHA
 
 #Official and unofficial for the sake of the world
 ifeq ($(CATALYST_OFFICIAL), true)
     CATALYST_BUILD := OFFICIAL
+    PRODUCT_PACKAGES += \
+    Updater
 endif
 
 #Gapps
