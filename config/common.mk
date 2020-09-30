@@ -1,7 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= ProjectSakura
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -208,9 +208,15 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/lineage/build/target/product/security/lineage
 
-include vendor/lineage/config/version.mk
+PRODUCT_VERSION_MAJOR = 0
+PRODUCT_VERSION_MINOR = 1
 
--include vendor/lineage-priv/keys/keys.mk
+# Increase sakura Version with each major release.
+LINEAGE_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-ALPHA
+LINEAGE_DISPLAY_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-ALPHA
+CATALYST_VERSION := $(LINEAGE_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+include vendor/lineage/config/version.mk
+
