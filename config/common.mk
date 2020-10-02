@@ -1,7 +1,8 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product-if-exists, vendor/lineage/config/catalyst.mk)
 
-PRODUCT_BRAND ?= ProjectSakura
+PRODUCT_BRAND ?= CatalystOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -224,7 +225,7 @@ ifeq ($(CATALYST_GAPPS), true)
     CATALYST_BUILD_ZIP_TYPE := GAPPS
 endif
 
-# Increase sakura Version with each major release.
+# Increase catalyst Version with each major release.
 LINEAGE_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(CATALYST_BUILD)
 LINEAGE_DISPLAY_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(CATALYST_BUILD)
 CATALYST_VERSION := $(LINEAGE_VERSION)
