@@ -211,6 +211,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 PRODUCT_VERSION_MAJOR = 0
 PRODUCT_VERSION_MINOR = 1
 CATALYST_BUILD := UNOFFICIAL-ALPHA
+CATALYST_BUILD_ZIP_TYPE := VANILLA
 
 #Official and unofficial for the sake of the world
 ifeq ($(CATALYST_OFFICIAL), true)
@@ -221,12 +222,12 @@ endif
 
 #Gapps
 ifeq ($(CATALYST_GAPPS), true)
-    $(call inherit-product, vendor/gapps/config.mk)
+    $(call inherit-product, vendor/gapps/gapps.mk)
     CATALYST_BUILD_ZIP_TYPE := GAPPS
 endif
 
 # Increase catalyst Version with each major release.
-LINEAGE_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(CATALYST_BUILD)
+LINEAGE_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(CATALYST_BUILD_ZIP_TYPE)-$(shell date +%Y%m%d-%H%M)-$(LINEAGE_BUILD)-$(CATALYST_BUILD)
 LINEAGE_DISPLAY_VERSION := CatalystOS-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_BUILD)-$(CATALYST_BUILD)
 CATALYST_VERSION := $(LINEAGE_VERSION)
 
