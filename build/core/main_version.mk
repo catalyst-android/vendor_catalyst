@@ -23,3 +23,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
 # LineageOS Platform Internal Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+
+# additional catalyst props
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.catalyst.maintainer=$(CATALYST_MAINTAINER)
