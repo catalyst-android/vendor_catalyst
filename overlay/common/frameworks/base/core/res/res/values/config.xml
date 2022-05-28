@@ -42,11 +42,6 @@
         <item>org.microg.nlp</item>
     </string-array>
 
-    <string-array name="config_locationExtraPackageNames" translatable="false">
-        <!-- TeleService -->
-        <item>com.android.phone</item>
-    </string-array>
-
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
     <!-- Enable lockscreen rotation by default -->
@@ -165,6 +160,8 @@
     <string-array name="config_locationExtraPackageNames" translatable="false">
         <!-- Google Play Services location history module -->
         <item>com.google.android.gms.location.history</item>
+        <!-- TeleService -->
+        <item>com.android.phone</item>
     </string-array>
 
     <!-- A list of potential packages, in priority order, that may contain an
