@@ -222,7 +222,7 @@ endif
 
 #Gapps
 ifeq ($(CATALYST_GAPPS), true)
-    $(call inherit-product, vendor/gapps/gapps.mk)
+    $(call inherit-product, vendor/gapps/basic/config.mk)
     CATALYST_BUILD_ZIP_TYPE := GAPPS
 endif
 
