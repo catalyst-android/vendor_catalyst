@@ -9,7 +9,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Apps
 PRODUCT_PACKAGES += \
     Backgrounds \
-    Eleven \
     ExactCalculator \
     Jelly \
     Profiles \
