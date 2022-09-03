@@ -13,58 +13,58 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARROW_MOD_VERSION = v13.0
-ARROW_BUILD_TYPE := UNOFFICIAL
-ARROW_BUILD_ZIP_TYPE := VANILLA
+CATALYST_MOD_VERSION = v13.0
+CATALYST_BUILD_TYPE := UNOFFICIAL
+CATALYST_BUILD_ZIP_TYPE := VANILLA
 
-ifeq ($(ARROW_BETA),true)
-    ARROW_BUILD_TYPE := BETA
+ifeq ($(CATALYST_BETA),true)
+    CATALYST_BUILD_TYPE := BETA
 endif
 
-ifeq ($(ARROW_GAPPS), true)
+ifeq ($(CATALYST_GAPPS), true)
     $(call inherit-product, vendor/gapps/common/common-vendor.mk)
-    ARROW_BUILD_ZIP_TYPE := GAPPS
+    CATALYST_BUILD_ZIP_TYPE := GAPPS
 endif
 
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 
-ifeq ($(ARROW_OFFICIAL), true)
-   LIST = $(shell cat infrastructure/devices/arrow.devices | awk '$$1 != "#" { print $$2 }')
+ifeq ($(CATALYST_OFFICIAL), true)
+   LIST = $(shell cat infrastructure/devices/catalyst.devices | awk '$$1 != "#" { print $$2 }')
     ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       IS_OFFICIAL=true
-      ARROW_BUILD_TYPE := OFFICIAL
+      CATALYST_BUILD_TYPE := OFFICIAL
 
 PRODUCT_PACKAGES += \
     Updater
 
     endif
     ifneq ($(IS_OFFICIAL), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
+       CATALYST_BUILD_TYPE := UNOFFICIAL
        $(error Device is not official "$(CURRENT_DEVICE)")
     endif
 endif
 
-ifeq ($(ARROW_COMMUNITY), true)
-   LIST = $(shell cat infrastructure/devices/arrow-community.devices | awk '$$1 != "#" { print $$2 }')
+ifeq ($(CATALYST_COMMUNITY), true)
+   LIST = $(shell cat infrastructure/devices/catalyst-community.devices | awk '$$1 != "#" { print $$2 }')
     ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       IS_COMMUNITY=true
-      ARROW_BUILD_TYPE := COMMUNITY
+      CATALYST_BUILD_TYPE := COMMUNITY
     endif
     ifneq ($(IS_COMMUNITY), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
+       CATALYST_BUILD_TYPE := UNOFFICIAL
        $(error This isn't a community device "$(CURRENT_DEVICE)")
     endif
 endif
 
-ARROW_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(CURRENT_DEVICE)-$(ARROW_BUILD_TYPE)-$(shell date -u +%Y%m%d)-$(ARROW_BUILD_ZIP_TYPE)
+CATALYST_VERSION := Catalyst-$(CATALYST_MOD_VERSION)-$(CURRENT_DEVICE)-$(CATALYST_BUILD_TYPE)-$(shell date -u +%Y%m%d)-$(CATALYST_BUILD_ZIP_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.version=$(ARROW_VERSION) \
-  ro.arrow.releasetype=$(ARROW_BUILD_TYPE) \
-  ro.arrow.ziptype=$(ARROW_BUILD_ZIP_TYPE) \
-  ro.modversion=$(ARROW_MOD_VERSION)
+  ro.catalyst.version=$(CATALYST_VERSION) \
+  ro.catalyst.releasetype=$(CATALYST_BUILD_TYPE) \
+  ro.catalyst.ziptype=$(CATALYST_BUILD_ZIP_TYPE) \
+  ro.modversion=$(CATALYST_MOD_VERSION)
 
-ARROW_DISPLAY_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(ARROW_BUILD_TYPE)
+CATALYST_DISPLAY_VERSION := Catalyst-$(CATALYST_MOD_VERSION)-$(CATALYST_BUILD_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.display.version=$(ARROW_DISPLAY_VERSION)
+  ro.catalyst.display.version=$(CATALYST_DISPLAY_VERSION)
