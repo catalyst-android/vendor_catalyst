@@ -84,6 +84,12 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+PRODUCT_COPY_FILES += \
+    vendor/catalyst/permissions/privapp-permissions-com.umang96.special.features.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.umang96.special.features.xml
+
+PRODUCT_PACKAGES += \
+    CatalystSettings
+
 # Bootanimation
 include vendor/catalyst/config/bootanimation.mk
 
