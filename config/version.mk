@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, vendor/gapps/config.mk)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
 
 CATALYST_MOD_VERSION = 1.0
 CATALYST_BUILD_TYPE := UNOFFICIAL
