@@ -23,6 +23,11 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_PACKAGES += \
     NetworkStackOverlay
 
+# Themes
+PRODUCT_PACKAGES += \
+    ThemePicker \
+    WallpaperPicker2
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
@@ -47,6 +52,7 @@ PRODUCT_COPY_FILES += \
     vendor/catalyst/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/catalyst/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/catalyst/build/tools/50-catalyst.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-catalyst.sh
+
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/addon.d/50-catalyst.sh
