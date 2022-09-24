@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
 # Themes
 PRODUCT_PACKAGES += \
     ThemePicker \
-    WallpaperPicker2
+    WallpaperPicker2 \
+    AndroidBlackThemeOverlay
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
