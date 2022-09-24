@@ -15,7 +15,7 @@
 
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
 
-CATALYST_MOD_VERSION = 1.0
+CATALYST_MOD_VERSION = 1.1
 CATALYST_BUILD_TYPE := UNOFFICIAL
 CATALYST_BUILD_ZIP_TYPE := GAPPS
 
