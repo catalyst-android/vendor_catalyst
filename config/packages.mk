@@ -25,9 +25,8 @@ PRODUCT_PACKAGES += \
     SimpleGallery \
     Stk \
     stats \
-    ThemePicker \
-    CatalystThemesStub \
-    GameSpace
+    GameSpace \
+    ThemePicker
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
