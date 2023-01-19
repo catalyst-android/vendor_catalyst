@@ -36,7 +36,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # LineageHW permission
 PRODUCT_COPY_FILES += \
-    vendor/arrow/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineagehw.xml
+    vendor/catalyst/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineagehw.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
